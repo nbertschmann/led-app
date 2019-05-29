@@ -18,9 +18,11 @@ namespace ArduinoLEDapp
         {
             InitializeComponent();
             string[] comPortArray = SerialPort.GetPortNames();
-            int arrayLength = comPortArray.Length;
-            string arrayLengthString = arrayLength.ToString();
-            messageBox.Text = comPortArray[0] + comPortArray[1] + comPortArray[2];
+
+            comboBoxAvailableComPorts.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxAvailableComPorts.Items.AddRange(comPortArray);
+
+            buttonBlink.Enabled = false;
         }
 
         private void textboxBlinks_TextChanged(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace ArduinoLEDapp
             if(name == "1" || name == "2" || name == "3")
             {
                 messageBox.Text = "LED Blinking... ";
-                BlinkArduino(name, SerialPortBegin());
+                BlinkArduino(name, SerialPortBegin(getComPort()));
             }
 
             else
@@ -60,31 +62,31 @@ namespace ArduinoLEDapp
         private void buttonMotorOn_Click(object sender, EventArgs e)
         {
             messageBox.Text = "Motor Turned On";
-            motorOn(SerialPortBegin());
+            motorOn(SerialPortBegin(getComPort()));
         }
 
         private void buttonMotorOff_Click(object sender, EventArgs e)
         {
             messageBox.Text = "Turning Motor Off..";
-            motorOff(SerialPortBegin());
+            motorOff(SerialPortBegin(getComPort()));
         }
 
         private void LedON_Click(object sender, EventArgs e)
         {
             messageBox.Text = "Turning Red LED On..";
-            redLedOn(SerialPortBegin());
+            redLedOn(SerialPortBegin(getComPort()));
         }
 
         private void LedOFF_Click(object sender, EventArgs e)
         {
             messageBox.Text = "Turning Red LED Off..";
-            redLedOff(SerialPortBegin());
+            redLedOff(SerialPortBegin(getComPort()));
         }
 
         private void buttonReadVoltage_Click(object sender, EventArgs e)
         {
             messageBox.Text = "Reading Voltage..";
-            readVoltage(SerialPortBegin());
+            readVoltage(SerialPortBegin(getComPort()));
         }
 
         private void BlinkArduino(string name, SerialPort _serialPort)
@@ -160,19 +162,23 @@ namespace ArduinoLEDapp
             string voltageReading = _serialPort.ReadExisting();
             textboxReadVoltage.Text = voltageReading;
             
-            
             _serialPort.Close();
         }
 
-        private SerialPort SerialPortBegin()
+        private SerialPort SerialPortBegin(string comPort)
         {
+
             SerialPort _serialPort = new SerialPort();
-            _serialPort.PortName = "COM5";
+            _serialPort.PortName = comPort;
             _serialPort.BaudRate = 9600;
             _serialPort.Open();
-
             return _serialPort;
         }
 
+        private string getComPort()
+        {
+         string selectedComPort = comboBoxAvailableComPorts.SelectedItem.ToString();
+         return selectedComPort;
+        }
     }
 }

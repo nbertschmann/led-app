@@ -43,7 +43,7 @@
             this.LedOFF = new System.Windows.Forms.Button();
             this.LedON = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAvailableComPorts = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -183,13 +183,14 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Red LED";
             // 
-            // comboBox1
+            // comboBoxAvailableComPorts
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(223, 121);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 33);
-            this.comboBox1.TabIndex = 20;
+            this.comboBoxAvailableComPorts.FormattingEnabled = true;
+            this.comboBoxAvailableComPorts.Location = new System.Drawing.Point(223, 121);
+            this.comboBoxAvailableComPorts.Name = "comboBoxAvailableComPorts";
+            this.comboBoxAvailableComPorts.Size = new System.Drawing.Size(173, 33);
+            this.comboBoxAvailableComPorts.TabIndex = 20;
+            
             // 
             // label7
             // 
@@ -206,7 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 525);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxAvailableComPorts);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.LedON);
             this.Controls.Add(this.LedOFF);
@@ -247,7 +248,7 @@
         private System.Windows.Forms.Button LedOFF;
         private System.Windows.Forms.Button LedON;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxAvailableComPorts;
         private System.Windows.Forms.Label label7;
     }
 }
