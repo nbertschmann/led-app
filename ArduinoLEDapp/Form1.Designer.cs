@@ -28,13 +28,200 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.textboxBlinks = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonBlink = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonMotorOn = new System.Windows.Forms.Button();
+            this.buttonMotorOff = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.buttonReadVoltage = new System.Windows.Forms.Button();
+            this.textboxReadVoltage = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.messageBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // textboxBlinks
+            // 
+            this.textboxBlinks.Location = new System.Drawing.Point(221, 104);
+            this.textboxBlinks.Name = "textboxBlinks";
+            this.textboxBlinks.Size = new System.Drawing.Size(146, 31);
+            this.textboxBlinks.TabIndex = 0;
+            this.textboxBlinks.TextChanged += new System.EventHandler(this.textboxBlinks_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(249, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Arduino GUI";
+            // 
+            // buttonBlink
+            // 
+            this.buttonBlink.Location = new System.Drawing.Point(384, 98);
+            this.buttonBlink.Name = "buttonBlink";
+            this.buttonBlink.Size = new System.Drawing.Size(144, 42);
+            this.buttonBlink.TabIndex = 3;
+            this.buttonBlink.Text = "Start Blink";
+            this.buttonBlink.UseVisualStyleBackColor = true;
+            this.buttonBlink.Click += new System.EventHandler(this.buttonBlink_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 282);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Servo Motor";
+            // 
+            // buttonMotorOn
+            // 
+            this.buttonMotorOn.Location = new System.Drawing.Point(221, 274);
+            this.buttonMotorOn.Name = "buttonMotorOn";
+            this.buttonMotorOn.Size = new System.Drawing.Size(144, 42);
+            this.buttonMotorOn.TabIndex = 5;
+            this.buttonMotorOn.Text = "ON";
+            this.buttonMotorOn.UseVisualStyleBackColor = true;
+            this.buttonMotorOn.Click += new System.EventHandler(this.buttonMotorOn_Click);
+            // 
+            // buttonMotorOff
+            // 
+            this.buttonMotorOff.Location = new System.Drawing.Point(384, 274);
+            this.buttonMotorOff.Name = "buttonMotorOff";
+            this.buttonMotorOff.Size = new System.Drawing.Size(144, 40);
+            this.buttonMotorOff.TabIndex = 6;
+            this.buttonMotorOff.Text = "OFF";
+            this.buttonMotorOff.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 163);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(142, 25);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Voltage Read";
+            // 
+            // buttonReadVoltage
+            // 
+            this.buttonReadVoltage.Location = new System.Drawing.Point(384, 154);
+            this.buttonReadVoltage.Name = "buttonReadVoltage";
+            this.buttonReadVoltage.Size = new System.Drawing.Size(144, 42);
+            this.buttonReadVoltage.TabIndex = 10;
+            this.buttonReadVoltage.Text = "Refresh";
+            this.buttonReadVoltage.UseVisualStyleBackColor = true;
+            // 
+            // textboxReadVoltage
+            // 
+            this.textboxReadVoltage.Location = new System.Drawing.Point(221, 160);
+            this.textboxReadVoltage.Name = "textboxReadVoltage";
+            this.textboxReadVoltage.Size = new System.Drawing.Size(146, 31);
+            this.textboxReadVoltage.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 392);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(130, 25);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "MESSAGES";
+            // 
+            // messageBox
+            // 
+            this.messageBox.Location = new System.Drawing.Point(187, 386);
+            this.messageBox.Name = "messageBox";
+            this.messageBox.Size = new System.Drawing.Size(378, 31);
+            this.messageBox.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 107);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(190, 25);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Blink Speed (1 - 3)";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(384, 217);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 40);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "OFF";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(223, 215);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(144, 42);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "ON";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 224);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(98, 25);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Red LED";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(899, 525);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.messageBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textboxReadVoltage);
+            this.Controls.Add(this.buttonReadVoltage);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.buttonMotorOff);
+            this.Controls.Add(this.buttonMotorOn);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.buttonBlink);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textboxBlinks);
+            this.Name = "Form1";
+            this.Text = "  ";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textboxBlinks;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonBlink;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonMotorOn;
+        private System.Windows.Forms.Button buttonMotorOff;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonReadVoltage;
+        private System.Windows.Forms.TextBox textboxReadVoltage;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox messageBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
     }
 }
 
