@@ -88,8 +88,6 @@ namespace ArduinoLEDapp
             else if (name == "3")
             {
                 associatedString = "C";
-                textboxReadVoltage.Text = "C";
-
             }
 
             else
@@ -104,6 +102,20 @@ namespace ArduinoLEDapp
             // messageBox.Text = _serialPort.ReadLine();
             _serialPort.Close();
 
+        }
+
+        void redLedOn(SerialPort _serialPort)
+        {
+            _serialPort.Write("D");
+            Thread.Sleep(200);
+            _serialPort.Close();
+        }
+
+        void redLedOff(SerialPort _serialPort)
+        {
+            _serialPort.Write("E");
+            Thread.Sleep(200);
+            _serialPort.Close();
         }
 
         void motorOn(SerialPort _serialPort)
@@ -130,12 +142,16 @@ namespace ArduinoLEDapp
             return _serialPort;
         }
 
-        void Test1(SerialPort _serialPort)
+        private void LedON_Click(object sender, EventArgs e)
         {
-            _serialPort.Write("G");
-            Thread.Sleep(200);
-            _serialPort.Close();
+            messageBox.Text = "Red LED Turned On";
+            redLedOn(SerialPortBegin());
         }
 
+        private void LedOFF_Click(object sender, EventArgs e)
+        {
+            messageBox.Text = "Red LED Turned Off";
+            redLedOff(SerialPortBegin());
+        }
     }
 }

@@ -40,8 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.messageBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.LedOFF = new System.Windows.Forms.Button();
+            this.LedON = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -151,23 +151,25 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Blink Speed (1 - 3)";
             // 
-            // button1
+            // LedOFF
             // 
-            this.button1.Location = new System.Drawing.Point(384, 217);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 40);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "OFF";
-            this.button1.UseVisualStyleBackColor = true;
+            this.LedOFF.Location = new System.Drawing.Point(384, 217);
+            this.LedOFF.Name = "LedOFF";
+            this.LedOFF.Size = new System.Drawing.Size(144, 40);
+            this.LedOFF.TabIndex = 17;
+            this.LedOFF.Text = "OFF";
+            this.LedOFF.UseVisualStyleBackColor = true;
+            this.LedOFF.Click += new System.EventHandler(this.LedOFF_Click);
             // 
-            // button2
+            // LedON
             // 
-            this.button2.Location = new System.Drawing.Point(223, 215);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 42);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "ON";
-            this.button2.UseVisualStyleBackColor = true;
+            this.LedON.Location = new System.Drawing.Point(223, 215);
+            this.LedON.Name = "LedON";
+            this.LedON.Size = new System.Drawing.Size(144, 42);
+            this.LedON.TabIndex = 18;
+            this.LedON.Text = "ON";
+            this.LedON.UseVisualStyleBackColor = true;
+            this.LedON.Click += new System.EventHandler(this.LedON_Click);
             // 
             // label6
             // 
@@ -184,8 +186,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 525);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.LedON);
+            this.Controls.Add(this.LedOFF);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.messageBox);
             this.Controls.Add(this.label3);
@@ -220,8 +222,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox messageBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button LedOFF;
+        private System.Windows.Forms.Button LedON;
         private System.Windows.Forms.Label label6;
     }
 }
