@@ -62,11 +62,27 @@ namespace ArduinoLEDapp
 
         private void buttonMotorOff_Click(object sender, EventArgs e)
         {
-            messageBox.Text = "Motor Turned Off";
+            messageBox.Text = "Turning Motor Off..";
             motorOff(SerialPortBegin());
         }
 
-        
+        private void LedON_Click(object sender, EventArgs e)
+        {
+            messageBox.Text = "Turning Red LED On..";
+            redLedOn(SerialPortBegin());
+        }
+
+        private void LedOFF_Click(object sender, EventArgs e)
+        {
+            messageBox.Text = "Turning Red LED Off..";
+            redLedOff(SerialPortBegin());
+        }
+
+        private void buttonReadVoltage_Click(object sender, EventArgs e)
+        {
+            messageBox.Text = "Reading Voltage..";
+            readVoltage(SerialPortBegin());
+        }
 
         void BlinkArduino(string name, SerialPort _serialPort)
         {
@@ -132,6 +148,19 @@ namespace ArduinoLEDapp
             _serialPort.Close();
         }
 
+
+        void readVoltage(SerialPort _serialPort)
+        {
+            _serialPort.Write("H");
+
+            Thread.Sleep(200);
+            string voltageReading = _serialPort.ReadExisting();
+            textboxReadVoltage.Text = voltageReading;
+            
+            
+            _serialPort.Close();
+        }
+
         private SerialPort SerialPortBegin()
         {
             SerialPort _serialPort = new SerialPort();
@@ -142,16 +171,5 @@ namespace ArduinoLEDapp
             return _serialPort;
         }
 
-        private void LedON_Click(object sender, EventArgs e)
-        {
-            messageBox.Text = "Red LED Turned On";
-            redLedOn(SerialPortBegin());
-        }
-
-        private void LedOFF_Click(object sender, EventArgs e)
-        {
-            messageBox.Text = "Red LED Turned Off";
-            redLedOff(SerialPortBegin());
-        }
     }
 }

@@ -118,6 +118,7 @@
             this.buttonReadVoltage.TabIndex = 10;
             this.buttonReadVoltage.Text = "Refresh";
             this.buttonReadVoltage.UseVisualStyleBackColor = true;
+            this.buttonReadVoltage.Click += new System.EventHandler(this.buttonReadVoltage_Click);
             // 
             // textboxReadVoltage
             // 
