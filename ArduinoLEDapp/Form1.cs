@@ -101,7 +101,7 @@ namespace ArduinoLEDapp
 
             Thread.Sleep(200);
 
-            //messageBox.Text = _serialPort.ReadLine();
+            // messageBox.Text = _serialPort.ReadLine();
             _serialPort.Close();
 
         }
@@ -128,6 +128,13 @@ namespace ArduinoLEDapp
             _serialPort.Open();
 
             return _serialPort;
+        }
+
+        void Test1(SerialPort _serialPort)
+        {
+            _serialPort.Write("G");
+            Thread.Sleep(200);
+            _serialPort.Close();
         }
 
     }
