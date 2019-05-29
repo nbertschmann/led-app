@@ -17,7 +17,10 @@ namespace ArduinoLEDapp
         public Form1()
         {
             InitializeComponent();
-
+            string[] comPortArray = SerialPort.GetPortNames();
+            int arrayLength = comPortArray.Length;
+            string arrayLengthString = arrayLength.ToString();
+            messageBox.Text = comPortArray[0] + comPortArray[1] + comPortArray[2];
         }
 
         private void textboxBlinks_TextChanged(object sender, EventArgs e)
@@ -84,7 +87,7 @@ namespace ArduinoLEDapp
             readVoltage(SerialPortBegin());
         }
 
-        void BlinkArduino(string name, SerialPort _serialPort)
+        private void BlinkArduino(string name, SerialPort _serialPort)
         {
 
             string associatedString;
@@ -120,28 +123,28 @@ namespace ArduinoLEDapp
 
         }
 
-        void redLedOn(SerialPort _serialPort)
+        private void redLedOn(SerialPort _serialPort)
         {
             _serialPort.Write("D");
             Thread.Sleep(200);
             _serialPort.Close();
         }
 
-        void redLedOff(SerialPort _serialPort)
+        private void redLedOff(SerialPort _serialPort)
         {
             _serialPort.Write("E");
             Thread.Sleep(200);
             _serialPort.Close();
         }
 
-        void motorOn(SerialPort _serialPort)
+        private void motorOn(SerialPort _serialPort)
         {
             _serialPort.Write("F");
             Thread.Sleep(200);
             _serialPort.Close();
         }
 
-        void motorOff(SerialPort _serialPort)
+        private void motorOff(SerialPort _serialPort)
         {
             _serialPort.Write("G");
             Thread.Sleep(200);
@@ -149,7 +152,7 @@ namespace ArduinoLEDapp
         }
 
 
-        void readVoltage(SerialPort _serialPort)
+        private void readVoltage(SerialPort _serialPort)
         {
             _serialPort.Write("H");
 

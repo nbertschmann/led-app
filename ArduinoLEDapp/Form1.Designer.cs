@@ -43,11 +43,13 @@
             this.LedOFF = new System.Windows.Forms.Button();
             this.LedON = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textboxBlinks
             // 
-            this.textboxBlinks.Location = new System.Drawing.Point(221, 104);
+            this.textboxBlinks.Location = new System.Drawing.Point(223, 200);
             this.textboxBlinks.Name = "textboxBlinks";
             this.textboxBlinks.Size = new System.Drawing.Size(146, 31);
             this.textboxBlinks.TabIndex = 0;
@@ -64,7 +66,7 @@
             // 
             // buttonBlink
             // 
-            this.buttonBlink.Location = new System.Drawing.Point(384, 98);
+            this.buttonBlink.Location = new System.Drawing.Point(384, 194);
             this.buttonBlink.Name = "buttonBlink";
             this.buttonBlink.Size = new System.Drawing.Size(144, 42);
             this.buttonBlink.TabIndex = 3;
@@ -75,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 282);
+            this.label2.Location = new System.Drawing.Point(18, 386);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 4;
@@ -83,9 +85,9 @@
             // 
             // buttonMotorOn
             // 
-            this.buttonMotorOn.Location = new System.Drawing.Point(221, 274);
+            this.buttonMotorOn.Location = new System.Drawing.Point(223, 378);
             this.buttonMotorOn.Name = "buttonMotorOn";
-            this.buttonMotorOn.Size = new System.Drawing.Size(144, 42);
+            this.buttonMotorOn.Size = new System.Drawing.Size(144, 40);
             this.buttonMotorOn.TabIndex = 5;
             this.buttonMotorOn.Text = "ON";
             this.buttonMotorOn.UseVisualStyleBackColor = true;
@@ -93,7 +95,7 @@
             // 
             // buttonMotorOff
             // 
-            this.buttonMotorOff.Location = new System.Drawing.Point(384, 274);
+            this.buttonMotorOff.Location = new System.Drawing.Point(384, 378);
             this.buttonMotorOff.Name = "buttonMotorOff";
             this.buttonMotorOff.Size = new System.Drawing.Size(144, 40);
             this.buttonMotorOff.TabIndex = 6;
@@ -104,7 +106,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 163);
+            this.label5.Location = new System.Drawing.Point(17, 257);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 25);
             this.label5.TabIndex = 9;
@@ -112,7 +114,7 @@
             // 
             // buttonReadVoltage
             // 
-            this.buttonReadVoltage.Location = new System.Drawing.Point(384, 154);
+            this.buttonReadVoltage.Location = new System.Drawing.Point(384, 248);
             this.buttonReadVoltage.Name = "buttonReadVoltage";
             this.buttonReadVoltage.Size = new System.Drawing.Size(144, 42);
             this.buttonReadVoltage.TabIndex = 10;
@@ -122,7 +124,7 @@
             // 
             // textboxReadVoltage
             // 
-            this.textboxReadVoltage.Location = new System.Drawing.Point(221, 160);
+            this.textboxReadVoltage.Location = new System.Drawing.Point(223, 254);
             this.textboxReadVoltage.Name = "textboxReadVoltage";
             this.textboxReadVoltage.Size = new System.Drawing.Size(146, 31);
             this.textboxReadVoltage.TabIndex = 11;
@@ -130,7 +132,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 392);
+            this.label3.Location = new System.Drawing.Point(16, 458);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 25);
             this.label3.TabIndex = 12;
@@ -138,7 +140,7 @@
             // 
             // messageBox
             // 
-            this.messageBox.Location = new System.Drawing.Point(187, 386);
+            this.messageBox.Location = new System.Drawing.Point(191, 455);
             this.messageBox.Name = "messageBox";
             this.messageBox.Size = new System.Drawing.Size(378, 31);
             this.messageBox.TabIndex = 13;
@@ -146,7 +148,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 107);
+            this.label4.Location = new System.Drawing.Point(17, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 25);
             this.label4.TabIndex = 16;
@@ -154,7 +156,7 @@
             // 
             // LedOFF
             // 
-            this.LedOFF.Location = new System.Drawing.Point(384, 217);
+            this.LedOFF.Location = new System.Drawing.Point(384, 328);
             this.LedOFF.Name = "LedOFF";
             this.LedOFF.Size = new System.Drawing.Size(144, 40);
             this.LedOFF.TabIndex = 17;
@@ -164,9 +166,9 @@
             // 
             // LedON
             // 
-            this.LedON.Location = new System.Drawing.Point(223, 215);
+            this.LedON.Location = new System.Drawing.Point(223, 328);
             this.LedON.Name = "LedON";
-            this.LedON.Size = new System.Drawing.Size(144, 42);
+            this.LedON.Size = new System.Drawing.Size(144, 40);
             this.LedON.TabIndex = 18;
             this.LedON.Text = "ON";
             this.LedON.UseVisualStyleBackColor = true;
@@ -175,17 +177,36 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 224);
+            this.label6.Location = new System.Drawing.Point(18, 336);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 25);
             this.label6.TabIndex = 19;
             this.label6.Text = "Red LED";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(223, 121);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(173, 33);
+            this.comboBox1.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 129);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 25);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "COM Port";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 525);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.LedON);
             this.Controls.Add(this.LedOFF);
@@ -226,6 +247,8 @@
         private System.Windows.Forms.Button LedOFF;
         private System.Windows.Forms.Button LedON;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label7;
     }
 }
 
