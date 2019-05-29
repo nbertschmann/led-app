@@ -77,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 386);
+            this.label2.Location = new System.Drawing.Point(17, 386);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 4;
@@ -114,7 +114,7 @@
             // 
             // buttonReadVoltage
             // 
-            this.buttonReadVoltage.Location = new System.Drawing.Point(384, 248);
+            this.buttonReadVoltage.Location = new System.Drawing.Point(384, 253);
             this.buttonReadVoltage.Name = "buttonReadVoltage";
             this.buttonReadVoltage.Size = new System.Drawing.Size(144, 42);
             this.buttonReadVoltage.TabIndex = 10;
@@ -124,7 +124,7 @@
             // 
             // textboxReadVoltage
             // 
-            this.textboxReadVoltage.Location = new System.Drawing.Point(223, 254);
+            this.textboxReadVoltage.Location = new System.Drawing.Point(223, 259);
             this.textboxReadVoltage.Name = "textboxReadVoltage";
             this.textboxReadVoltage.Size = new System.Drawing.Size(146, 31);
             this.textboxReadVoltage.TabIndex = 11;
@@ -190,7 +190,7 @@
             this.comboBoxAvailableComPorts.Name = "comboBoxAvailableComPorts";
             this.comboBoxAvailableComPorts.Size = new System.Drawing.Size(173, 33);
             this.comboBoxAvailableComPorts.TabIndex = 20;
-            
+            this.comboBoxAvailableComPorts.SelectedIndexChanged += new System.EventHandler(this.comboBoxAvailableComPorts_SelectedIndexChanged);
             // 
             // label7
             // 
