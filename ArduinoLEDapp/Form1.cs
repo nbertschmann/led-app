@@ -41,16 +41,37 @@ namespace ArduinoLEDapp
                 messageBox.Text = "Incorrect Input";
             }
             
+        }
 
-
+        
+        private void ledBlinks_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonMotorOn_Click(object sender, EventArgs e)
+        {
+            messageBox.Text = "Motor Turned On";
+            motorOn(SerialPortBegin());
+        }
+
+        private void buttonMotorOff_Click(object sender, EventArgs e)
+        {
+            messageBox.Text = "Motor Turned Off";
+            motorOff(SerialPortBegin());
+        }
+
+        
 
         void BlinkArduino(string name, SerialPort _serialPort)
         {
 
             string associatedString;
-            
 
             Thread.Sleep(200);
 
@@ -68,7 +89,7 @@ namespace ArduinoLEDapp
             {
                 associatedString = "C";
                 textboxReadVoltage.Text = "C";
-               
+
             }
 
             else
@@ -80,24 +101,23 @@ namespace ArduinoLEDapp
 
             Thread.Sleep(200);
 
-            messageBox.Text = _serialPort.ReadLine();
+            //messageBox.Text = _serialPort.ReadLine();
             _serialPort.Close();
 
         }
 
-        private void ledBlinks_Click(object sender, EventArgs e)
+        void motorOn(SerialPort _serialPort)
         {
-
+            _serialPort.Write("F");
+            Thread.Sleep(200);
+            _serialPort.Close();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        void motorOff(SerialPort _serialPort)
         {
-
-        }
-
-        private void buttonMotorOn_Click(object sender, EventArgs e)
-        {
-
+            _serialPort.Write("G");
+            Thread.Sleep(200);
+            _serialPort.Close();
         }
 
         private SerialPort SerialPortBegin()
@@ -109,5 +129,6 @@ namespace ArduinoLEDapp
 
             return _serialPort;
         }
+
     }
 }

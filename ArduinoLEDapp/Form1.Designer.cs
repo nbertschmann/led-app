@@ -99,6 +99,7 @@
             this.buttonMotorOff.TabIndex = 6;
             this.buttonMotorOff.Text = "OFF";
             this.buttonMotorOff.UseVisualStyleBackColor = true;
+            this.buttonMotorOff.Click += new System.EventHandler(this.buttonMotorOff_Click);
             // 
             // label5
             // 
