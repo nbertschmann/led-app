@@ -29,25 +29,9 @@ namespace ArduinoLEDapp
             comboBoxAvailableComPorts.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxAvailableComPorts.Items.AddRange(comPortArray);
 
-            //disable all buttons (until COM port selected)
-            buttonBlink.Enabled = false;
-            buttonReadVoltage.Enabled = false;
-            LedON.Enabled = false;
-            LedOFF.Enabled = false;
-            buttonMotorOn.Enabled = false;
-            buttonMotorOff.Enabled = false;
+            disableBoxes();
 
-            //disable textboxes (until COM port selected)
-            textboxBlinks.Enabled = false;
-            textboxReadVoltage.Enabled = false;
-
-            messageBox.Text = "Select a COM Port";
-        }
-
-        private void textboxBlinks_TextChanged(object sender, EventArgs e)
-        {
-
-
+            
         }
 
         //blink LED button is clicked. Send input to BlinkArduino method
@@ -66,17 +50,6 @@ namespace ArduinoLEDapp
                 messageBox.Text = "Incorrect Input";
             }
             
-        }
-
-        
-        private void ledBlinks_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         //COM port is selected
@@ -169,55 +142,80 @@ namespace ArduinoLEDapp
         //turns the red LED on
         private void redLedOn(SerialPort _serialPort)
         {
-            _serialPort.Write("D");
-            Thread.Sleep(200);
-            _serialPort.Close();
+            if (_serialPort.IsOpen)
+            {
+                _serialPort.Write("D");
+                Thread.Sleep(200);
+                _serialPort.Close();
+            }
         }
 
         //turns the red LED off
         private void redLedOff(SerialPort _serialPort)
         {
-            _serialPort.Write("E");
-            Thread.Sleep(200);
-            _serialPort.Close();
+            if (_serialPort.IsOpen)
+            {
+                _serialPort.Write("E");
+                Thread.Sleep(200);
+                _serialPort.Close();
+            }
         }
 
         //turns the motor on
         private void motorOn(SerialPort _serialPort)
         {
-            _serialPort.Write("F");
-            Thread.Sleep(200);
-            _serialPort.Close();
+            if (_serialPort.IsOpen)
+            {
+                _serialPort.Write("F");
+                Thread.Sleep(200);
+                _serialPort.Close();
+            }
         }
 
         //turns the motor off
         private void motorOff(SerialPort _serialPort)
         {
-            _serialPort.Write("G");
-            Thread.Sleep(200);
-            _serialPort.Close();
+            if (_serialPort.IsOpen)
+            {
+                _serialPort.Write("G");
+                Thread.Sleep(200);
+                _serialPort.Close();
+            }
         }
 
         //reads the voltage input from the power supply
         private void readVoltage(SerialPort _serialPort)
         {
-            _serialPort.Write("H");
 
-            Thread.Sleep(200);
-            string voltageReading = _serialPort.ReadExisting();
-            textboxReadVoltage.Text = voltageReading;
-            
-            _serialPort.Close();
+            if (_serialPort.IsOpen)
+            {
+                _serialPort.Write("H");
+
+                Thread.Sleep(200);
+                string voltageReading = _serialPort.ReadExisting();
+                textboxReadVoltage.Text = voltageReading;
+
+                _serialPort.Close();
+            }
         }
 
         //opens serial communication from arduino to computer
         private SerialPort SerialPortBegin(string comPort)
         {
-
+           
             SerialPort _serialPort = new SerialPort();
             _serialPort.PortName = comPort;
             _serialPort.BaudRate = 9600;
-            _serialPort.Open();
+
+            try
+            {
+                _serialPort.Open();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Check to see if USB is connected");
+            }
             return _serialPort;
         }
 
@@ -228,6 +226,29 @@ namespace ArduinoLEDapp
          return selectedComPort;
         }
 
+        private void buttonRefreshComPort_Click(object sender, EventArgs e)
+        {
+            string[] comPortArray = SerialPort.GetPortNames();
+            comboBoxAvailableComPorts.Items.Clear();
+            comboBoxAvailableComPorts.Items.AddRange(comPortArray);
+            disableBoxes();
+        }
 
+        private void disableBoxes()
+        {
+            //disable all buttons (until COM port selected)
+            buttonBlink.Enabled = false;
+            buttonReadVoltage.Enabled = false;
+            LedON.Enabled = false;
+            LedOFF.Enabled = false;
+            buttonMotorOn.Enabled = false;
+            buttonMotorOff.Enabled = false;
+
+            //disable textboxes (until COM port selected)
+            textboxBlinks.Enabled = false;
+            textboxReadVoltage.Enabled = false;
+
+            messageBox.Text = "Select a COM Port";
+        }
     }
 }
