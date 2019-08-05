@@ -45,6 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxAvailableComPorts = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.buttonRefreshComPort = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textboxBlinks
@@ -53,7 +54,6 @@
             this.textboxBlinks.Name = "textboxBlinks";
             this.textboxBlinks.Size = new System.Drawing.Size(146, 31);
             this.textboxBlinks.TabIndex = 0;
-            this.textboxBlinks.TextChanged += new System.EventHandler(this.textboxBlinks_TextChanged);
             // 
             // label1
             // 
@@ -148,7 +148,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 206);
+            this.label4.Location = new System.Drawing.Point(18, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 25);
             this.label4.TabIndex = 16;
@@ -188,7 +188,7 @@
             this.comboBoxAvailableComPorts.FormattingEnabled = true;
             this.comboBoxAvailableComPorts.Location = new System.Drawing.Point(223, 121);
             this.comboBoxAvailableComPorts.Name = "comboBoxAvailableComPorts";
-            this.comboBoxAvailableComPorts.Size = new System.Drawing.Size(173, 33);
+            this.comboBoxAvailableComPorts.Size = new System.Drawing.Size(146, 33);
             this.comboBoxAvailableComPorts.TabIndex = 20;
             this.comboBoxAvailableComPorts.SelectedIndexChanged += new System.EventHandler(this.comboBoxAvailableComPorts_SelectedIndexChanged);
             // 
@@ -201,11 +201,22 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "COM Port";
             // 
+            // buttonRefreshComPort
+            // 
+            this.buttonRefreshComPort.Location = new System.Drawing.Point(384, 120);
+            this.buttonRefreshComPort.Name = "buttonRefreshComPort";
+            this.buttonRefreshComPort.Size = new System.Drawing.Size(144, 42);
+            this.buttonRefreshComPort.TabIndex = 22;
+            this.buttonRefreshComPort.Text = "Refresh";
+            this.buttonRefreshComPort.UseVisualStyleBackColor = true;
+            this.buttonRefreshComPort.Click += new System.EventHandler(this.buttonRefreshComPort_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 525);
+            this.ClientSize = new System.Drawing.Size(899, 678);
+            this.Controls.Add(this.buttonRefreshComPort);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBoxAvailableComPorts);
             this.Controls.Add(this.label6);
@@ -225,7 +236,7 @@
             this.Controls.Add(this.textboxBlinks);
             this.Name = "Form1";
             this.Text = "  ";
-            this.Load += new System.EventHandler(this.Form1_Load);
+          
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,6 +261,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxAvailableComPorts;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonRefreshComPort;
     }
 }
 
